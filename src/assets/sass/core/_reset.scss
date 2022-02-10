@@ -1,0 +1,62 @@
+/* reset
+--------------------------------------------------*/
+* {
+	@include prefix(box-sizing, border-box, webkit);
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: $nunito;
+	color: $gray-color;
+	background-color: $body-color;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $primary-color;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, figure {
+	margin: 0;
+}
+
+input {
+	outline: 0;
+	border: 0;
+}
+
+textarea {
+	resize: none;
+	border: 0;
+}
+
+button {
+	border: 0;
+	font-weight: 100 !important;
+	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+}
+
+button,
+a {
+	border-radius: 3px;
+}
+/* end reset
+--------------------------------------------------*/

@@ -1,0 +1,98 @@
+.main--title {
+  color: $gray-color;
+  text-transform: capitalize;
+  @include fonts(30px, 600);
+}
+
+.alt--title {
+  color: $gray-color;
+  text-transform: capitalize;
+  @include fonts(24px, 600);
+}
+
+.main--para {
+  color: $para-color;
+  @include fonts(20px, 400);
+}
+
+.alt--para {
+  color: $para-color;
+  @include fonts(18px, 600);
+}
+
+.app--flex {
+  @include flex-box();
+  @include justify-content(center);
+  @include align-items();
+  @include flex-direction();
+}
+
+.site--overlay {
+  @include fixed($top: 0, $left: 0);
+  z-index: 10;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.418);
+}
+
+.main--field {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 14px;
+  border-radius: 5px;
+  border: 1px solid #D5D5D5;
+  resize: none;
+  @include fonts(16px);
+}
+
+.main--error {
+  padding: 10px 0;
+  color: $error-color;
+  text-align: left;
+}
+
+.app--form {
+  width: 100%;
+}
+
+.app--form-control {
+  @include relative();
+  margin-bottom: 18px;
+}
+
+.app--label {
+  @include absolute($top: 17px, $left: 24px);
+  @include fonts(16px, 600);
+  text-transform: capitalize;
+  user-select: none;
+  @include prefix(transition, (top 0.3s ease-in-out, color 0.4s ease-in-out, font-size 0.3s ease-in-out), webkit moz o ms);
+}
+
+.app--input {
+  width:100%;
+  padding: 19px 24px;
+  color: $gray-color;
+  background-color: $bg-color;
+  border-bottom: 2px solid $gray-color;
+  @include prefix(transition, (background-color 0.4s ease-in-out, border-bottom 0.4s ease-in-out), webkit moz o ms);
+}
+
+.app--input:focus {
+  background-color: hsla(29, 70%, 76%, 0.15);
+  border-bottom: 2px solid $primary-color;
+  outline: 0;
+
+  ~ .app--label {
+    top: 5px;
+    color: $primary-color;
+    @include fonts(12px);
+  }
+}
+
+.input--value {
+  ~ .app--label {
+    top: 5px;
+    color: $primary-color;
+    @include fonts(12px);
+  }
+}
