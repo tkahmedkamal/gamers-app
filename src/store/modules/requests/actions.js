@@ -1,13 +1,19 @@
 export default {
   async requests(context, payload) {
-    const userId = context.rootGetters.userId;
+    const userId = payload.userId;
+
+    const { email, message } = payload;
+    const reqData = {
+      email,
+      message,
+    };
 
     const response = await fetch(
       `https://gamer-vue-default-rtdb.firebaseio.com/requests/${userId}.json`,
       {
         method: "POST",
         header: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: JSON.stringify(reqData),
       }
     );
 
@@ -22,8 +28,8 @@ export default {
 
     context.commit("requests", {
       id: data.name,
-      userId: userId,
-      ...payload,
+      userId,
+      ...reqData,
     });
   },
 

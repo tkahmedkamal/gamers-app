@@ -103,6 +103,7 @@ export default {
         const requestData = {
           email: emailVal,
           message: msgVal,
+          userId: this.$route.params.id,
         };
 
         await this.$store.dispatch("requests/requests", requestData);
